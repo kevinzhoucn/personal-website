@@ -38,7 +38,8 @@ pnpm lint
 - **Sections**: Header (sticky) → Introduction (hero) → My work (gallery grid) →
   Pricing (a plain table — fits the understated style and scans well) → Contact
   (prominent email link) → Footer.
-- Dark mode follows the system (toggle with the `d` key).
+- Dark mode follows the system; toggle light/dark with the sun/moon button in the
+  header (the `d` key works too).
 
 ## Replacing the placeholder content
 

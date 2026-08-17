@@ -1,6 +1,8 @@
 import Image from "next/image"
+import type { ReactNode } from "react"
 
 import { buttonVariants } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 /* ------------------------------------------------------------------ */
 /* Placeholder content — see README.md → "Replacing the placeholder    */
@@ -53,7 +55,8 @@ const WORK = [
 const PRICING = [
   {
     session: "Portrait session",
-    details: "Ninety minutes, one location, twenty final images delivered digitally.",
+    details:
+      "Ninety minutes, one location, twenty final images delivered digitally.",
     rate: "From $350",
   },
   {
@@ -63,12 +66,13 @@ const PRICING = [
   },
   {
     session: "Documentary project",
-    details: "Longer collaborations, shot over weeks or months, by arrangement.",
+    details:
+      "Longer collaborations, shot over weeks or months, by arrangement.",
     rate: "On request",
   },
 ]
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
+function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <p className="font-mono text-[11px] tracking-[0.25em] text-muted-foreground uppercase">
       {children}
@@ -83,32 +87,45 @@ export default function Page() {
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/90 backdrop-blur">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-6">
           <a
-            href="#top"
+            href="#main"
             className="font-heading text-sm font-semibold tracking-[0.2em] uppercase"
           >
             {NAME}
           </a>
           <nav className="flex items-center gap-6 text-sm" aria-label="Primary">
-            <a href="#work" className="text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href="#work"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Work
             </a>
-            <a href="#pricing" className="text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href="#pricing"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Pricing
             </a>
-            <a href="#contact" className="text-muted-foreground transition-colors hover:text-foreground">
+            <a
+              href="#contact"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Contact
             </a>
             <a
               href="#contact"
-              className={buttonVariants({ variant: "outline", size: "sm" }) + " hidden sm:inline-flex"}
+              className={
+                buttonVariants({ variant: "outline", size: "sm" }) +
+                " hidden sm:inline-flex"
+              }
             >
               Get in touch
             </a>
+            <ThemeToggle />
           </nav>
         </div>
       </header>
 
-      <main id="top" className="flex-1">
+      <main id="main" className="flex-1">
         {/* Introduction */}
         <section className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-6 pt-20 pb-24 md:grid-cols-12 md:pt-32 md:pb-32">
           <div className="flex flex-col justify-center gap-8 md:col-span-7">
@@ -118,9 +135,9 @@ export default function Page() {
                 I photograph the quiet corners of everyday life.
               </h1>
               <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                I&apos;m {NAME}, a photographer based in {LOCATION}. I work with natural
-                light and unhurried sessions — portraits, landscape, and long-form
-                documentary projects.
+                I&apos;m {NAME}, a photographer based in {LOCATION}. I work with
+                natural light and unhurried sessions — portraits, landscape, and
+                long-form documentary projects.
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
@@ -131,7 +148,9 @@ export default function Page() {
               <span>Documentary</span>
             </div>
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <a href="#work" className={buttonVariants()}>View my work</a>
+              <a href="#work" className={buttonVariants()}>
+                View my work
+              </a>
               <a
                 href={`mailto:${EMAIL}`}
                 className={buttonVariants({ variant: "ghost" })}
@@ -150,10 +169,10 @@ export default function Page() {
                 className="object-cover"
                 priority
               />
+              <figcaption className="mt-3 font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
+                Self portrait — 2026
+              </figcaption>
             </figure>
-            <figcaption className="mt-3 font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-              Self portrait — 2026
-            </figcaption>
           </div>
         </section>
 
@@ -168,7 +187,8 @@ export default function Page() {
                 </h2>
               </div>
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-                A small selection from recent series. More to come as the archive grows.
+                A small selection from recent series. More to come as the
+                archive grows.
               </p>
             </div>
             <div className="grid grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
@@ -180,12 +200,14 @@ export default function Page() {
                       alt={item.alt}
                       fill
                       sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                      className="object-cover motion-safe:transition-transform motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover:scale-[1.03]"
                       loading="lazy"
                     />
                   </div>
                   <figcaption className="mt-4 flex items-baseline justify-between gap-4">
-                    <span className="text-sm font-medium tracking-wide">{item.title}</span>
+                    <span className="text-sm font-medium tracking-wide">
+                      {item.title}
+                    </span>
                     <span className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
                       {item.category}
                     </span>
@@ -197,7 +219,10 @@ export default function Page() {
         </section>
 
         {/* Pricing */}
-        <section id="pricing" className="scroll-mt-24 border-t border-border/70 bg-muted/40">
+        <section
+          id="pricing"
+          className="scroll-mt-24 border-t border-border/70 bg-muted/40"
+        >
           <div className="mx-auto w-full max-w-6xl px-6 py-20 md:py-28">
             <div className="mb-12 flex flex-col gap-3 md:mb-16">
               <SectionLabel>02 — Sessions &amp; rates</SectionLabel>
@@ -205,8 +230,8 @@ export default function Page() {
                 Pricing
               </h2>
               <p className="max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
-                Rates are a starting point — every project is different, so please ask.
-                A thirty percent deposit confirms the date.
+                Rates are a starting point — every project is different, so
+                please ask. A thirty percent deposit confirms the date.
               </p>
             </div>
             <div className="overflow-x-auto">
@@ -230,7 +255,12 @@ export default function Page() {
                       key={row.session}
                       className="border-b border-border/70 align-top last:border-b-0"
                     >
-                      <td className="py-6 pr-6 text-base font-medium">{row.session}</td>
+                      <td className="py-6 pr-6 text-base font-medium">
+                        {row.session}
+                        <span className="mt-2 block text-sm leading-relaxed font-normal text-muted-foreground sm:hidden">
+                          {row.details}
+                        </span>
+                      </td>
                       <td className="hidden py-6 pr-6 text-sm leading-relaxed text-muted-foreground sm:table-cell">
                         {row.details}
                       </td>
@@ -249,7 +279,10 @@ export default function Page() {
         </section>
 
         {/* Contact */}
-        <section id="contact" className="scroll-mt-24 border-t border-border/70">
+        <section
+          id="contact"
+          className="scroll-mt-24 border-t border-border/70"
+        >
           <div className="mx-auto flex w-full max-w-6xl flex-col items-start gap-10 px-6 py-20 md:py-32">
             <SectionLabel>03 — Contact</SectionLabel>
             <div className="flex flex-col gap-6">
@@ -257,8 +290,9 @@ export default function Page() {
                 Let&apos;s make photographs together.
               </h2>
               <p className="max-w-md text-base leading-relaxed text-muted-foreground">
-                I&apos;m available for portrait, editorial, and documentary work. Send an
-                email and I&apos;ll get back to you within two working days.
+                I&apos;m available for portrait, editorial, and documentary
+                work. Send an email and I&apos;ll get back to you within two
+                working days.
               </p>
             </div>
             <a
@@ -266,7 +300,10 @@ export default function Page() {
               className="group inline-flex flex-wrap items-center gap-3 border-b border-foreground/30 pb-1 text-xl font-medium tracking-tight transition-colors hover:border-foreground md:text-3xl"
             >
               {EMAIL}
-              <span aria-hidden="true" className="text-base text-muted-foreground transition-transform duration-300 group-hover:translate-x-1">
+              <span
+                aria-hidden="true"
+                className="text-base text-muted-foreground transition-transform duration-300 group-hover:translate-x-1"
+              >
                 →
               </span>
             </a>
