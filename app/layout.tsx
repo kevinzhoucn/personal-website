@@ -6,6 +6,7 @@ import type { ReactNode } from "react"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { SITE_NAME } from "@/lib/site-config"
 
 const fontSans = Outfit({
   subsets: ["latin"],
@@ -23,9 +24,9 @@ const fontMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Jane Doe — Photographer",
+  title: `${SITE_NAME} — Photographer`,
   description:
-    "Portfolio of Jane Doe, a photographer working with portraits, landscape, and documentary projects.",
+    `Portfolio of ${SITE_NAME}, a photographer working with portraits, landscape, and documentary projects.`,
 }
 
 export default function RootLayout({

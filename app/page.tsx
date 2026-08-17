@@ -3,15 +3,12 @@ import type { ReactNode } from "react"
 
 import { buttonVariants } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { SITE_EMAIL, SITE_LOCATION, SITE_NAME } from "@/lib/site-config"
 
 /* ------------------------------------------------------------------ */
 /* Placeholder content — see README.md → "Replacing the placeholder    */
 /* content" for exactly what to swap for the real site.               */
 /* ------------------------------------------------------------------ */
-
-const NAME = "Jane Doe"
-const EMAIL = "jane.doe@example.com"
-const LOCATION = "Portland, Oregon"
 
 const WORK = [
   {
@@ -90,7 +87,7 @@ export default function Page() {
             href="#main"
             className="font-heading text-sm font-semibold tracking-[0.2em] uppercase"
           >
-            {NAME}
+            {SITE_NAME}
           </a>
           <nav className="flex items-center gap-6 text-sm" aria-label="Primary">
             <a
@@ -135,7 +132,7 @@ export default function Page() {
                 I photograph the quiet corners of everyday life.
               </h1>
               <p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-                I&apos;m {NAME}, a photographer based in {LOCATION}. I work with
+                I&apos;m {SITE_NAME}, a photographer based in {SITE_LOCATION}. I work with
                 natural light and unhurried sessions — portraits, landscape, and
                 long-form documentary projects.
               </p>
@@ -152,7 +149,7 @@ export default function Page() {
                 View my work
               </a>
               <a
-                href={`mailto:${EMAIL}`}
+                href={`mailto:${SITE_EMAIL}`}
                 className={buttonVariants({ variant: "ghost" })}
               >
                 Get in touch
@@ -273,7 +270,7 @@ export default function Page() {
               </table>
             </div>
             <p className="mt-6 font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-              Travel outside {LOCATION} is billed at cost.
+              Travel outside {SITE_LOCATION} is billed at cost.
             </p>
           </div>
         </section>
@@ -296,10 +293,10 @@ export default function Page() {
               </p>
             </div>
             <a
-              href={`mailto:${EMAIL}`}
+              href={`mailto:${SITE_EMAIL}`}
               className="group inline-flex flex-wrap items-center gap-3 border-b border-foreground/30 pb-1 text-xl font-medium tracking-tight transition-colors hover:border-foreground md:text-3xl"
             >
-              {EMAIL}
+              {SITE_EMAIL}
               <span
                 aria-hidden="true"
                 className="text-base text-muted-foreground transition-transform duration-300 group-hover:translate-x-1"
@@ -308,7 +305,7 @@ export default function Page() {
               </span>
             </a>
             <p className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
-              Based in {LOCATION} · Available worldwide
+              Based in {SITE_LOCATION} · Available worldwide
             </p>
           </div>
         </section>
@@ -318,7 +315,7 @@ export default function Page() {
       <footer className="border-t border-border/70">
         <div className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-8">
           <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} {NAME} · Photography
+            © {new Date().getFullYear()} {SITE_NAME} · Photography
           </p>
           <p className="font-mono text-[11px] tracking-[0.2em] text-muted-foreground uppercase">
             Placeholder images via picsum.photos

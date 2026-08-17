@@ -1,4 +1,4 @@
-# Jane Doe — Photography (placeholder portfolio)
+# Your Name — Photography (generic template)
 
 A personal website for a photographer, built with [Next.js](https://nextjs.org) and
 [shadcn/ui](https://ui.shadcn.com), scaffolded from the shadcn Next.js template
@@ -23,6 +23,7 @@ pnpm lint
 | ----------------------- | ------------------------------------------------------- |
 | `app/page.tsx`          | The whole portfolio page (single page: Intro, Work, Pricing, Contact) |
 | `app/layout.tsx`        | Root layout, fonts, metadata                            |
+| `lib/site-config.ts`    | Site-wide placeholder constants (name, email, location) |
 | `app/globals.css`       | Theme tokens (shadcn base-lyra preset) and base styles  |
 | `components/ui/button.tsx` | shadcn button component                              |
 | `next.config.ts`        | Image domains (`picsum.photos`, `fastly.picsum.photos`, `images.unsplash.com`) |
@@ -48,23 +49,23 @@ site goes live.
 
 ### 1. Name and email
 
-In `app/page.tsx` (top of the file):
+In `lib/site-config.ts` (site-wide placeholder constants):
 
-| Constant  | Current placeholder  | Replace with          |
-| --------- | -------------------- | --------------------- |
-| `NAME`    | `Jane Doe`           | Your name             |
-| `EMAIL`   | `jane.doe@example.com` | Your email address  |
-| `LOCATION`| `Portland, Oregon`   | Your location         |
+| Constant      | Current placeholder | Replace with          |
+| ------------- | ------------------- | --------------------- |
+| `SITE_NAME`   | `Your Name`         | Your name             |
+| `SITE_EMAIL`  | `hello@example.com` | Your email address    |
+| `SITE_LOCATION` | `Portland, Oregon` | Your location         |
 
-The email is threaded through the header CTA and the Contact section, so a change
-updates the whole site.
+The name and email are threaded through the header, the Contact section, and the
+page metadata, so a change updates the whole site.
 
 ### 2. Copy
 
 - `app/page.tsx` — the hero headline, intro paragraph, work captions (`WORK` array),
   pricing rows (`PRICING` array), and contact paragraph are all sample text written
   for the placeholder persona. Rewrite them in your own voice.
-- `app/layout.tsx` — the `<title>` and `meta description` reference `Jane Doe`.
+- `app/layout.tsx` — the `<title>` and `meta description` reference `Your Name`.
 
 ### 3. Photographs
 
